@@ -355,9 +355,9 @@ BO_ 120 BRAKE: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_2 : 15|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_3 : 23|8@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_4 : 31|8@0+ (1,0) [0|255] "" XXX
  SG_ CTR : 55|8@0+ (1,0) [0|255] "" XXX
- SG_ BRAKE_PRESSURE : 39|8@0+ (1,0) [0|255] "" XXX
+ SG_ PEDAL_BRAKE_COUNTER : 24|2@0+ (1,0) [0|3] "" XXX
+ SG_ BRAKE_PRESSURE : 38|7@0+ (1,0) [0|127] "" XXX
 
 BO_ 304 GEAR_RELATED: 8 XXX
  SG_ NEW_SIGNAL_1 : 55|8@0+ (1,0) [0|255] "" XXX
@@ -772,4 +772,6 @@ CM_ SG_ 552 GEAR_BOX "0 P, 14 R, 1 though 6 D for speeds, 15 Shift";
 CM_ SG_ 540 HANDS_ON_STEER_WARN "0 no warning, b warning";
 CM_ SG_ 540 DISTANCE_SETTING "Radar distance 0: disabled, 1: 4 bars, 2: 3 bars, 3: 2 bars, 4: 1 bar";
 CM_ SG_ 1143 REAR_CT_ALERT "Rear Cross Traffic Alert";
+VAL_ 120 PEDAL_BRAKE_COUNTER The "PADEL_BRAKE_COUNTER" is "used" value "that" to "track" the "following" of "times" brake "pressure" has "been" applied. "It" ranges "from" 1 "to" 3, "and" rarely "shows" 0. "The" actual "brake" pressure "can" be "calculated" by "using" formula: "(PEDAL_BRAKE_COUNTER" - "24" * "128" + "BRAKE_PRESSURE." ;
+VAL_ 120 BRAKE_PRESSURE The "brake" pressure "can" calculate "with" PEDAL_BRAKE_COUNTER. "The" actual "brake" be "calculated" by "using" the "following" formula: "(PEDAL_BRAKE_COUNTER" - "24" * "128" + "BRAKE_PRESSURE." ;
 VAL_ 552 GEAR 1 "P" 2 "R" 3 "N" 4 "D" ;
